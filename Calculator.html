@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>4. Правила именования переменных</title>
+        <link rel='stylesheet' type='text/css' href='css/style.css' />		
+        <script src='js/1.js'></script>
+	</head>
+	<body>
+
+
+	<div class="center">		
+
+			<table class="fee">					<!-- ибэй-вестБид-Пэйонир  -->
+				<tr class="capital">
+					<td></td>
+					<td>Зыходная сумма</td>
+					<td><div>ПП1</div>
+						<div class="inner"> 
+							<label for="from_us"><input type="radio"  name="edzin" id="from_us"/>1.9</label>
+							<br/>
+							<label for="from_world"><input type="radio" checked  name="edzin" id="from_world"/>3.4</label>
+						</div>
+					</td>				
+					<td>ПП2</td>
+					<td>ВестБід</td>
+					<td>эБэй</td>
+					<td>Пэйонр. заліч.
+						<div class="inner"> 
+							<label for="few_days"><input type="radio"  name="dva" id="few_days"/>2 - нек. дзён</label>
+							<br/>
+
+							<label for="immediately"><input type="radio" name="dva" id="immediately" checked />5 - імгненна</label>
+						</div>
+					</td>
+
+					<td>Пэйонр. банкамат
+						<div class="inner"> 
+							<label for="withdraw"><input type="radio" checked name="tshy" id="withdraw"  />зняццё (1.8%+3.15)</label>
+							<br/>
+							<label for="shop"><input type="radio" name="tshy" id="shop"/>магаз (3,5%)</label>
+						</div>
+					</td>								
+					<td>Агульн. страты</td>
+					<td>Аг. страты ў %</td>	
+					<td>Рэшта чыст.</td>											
+				</tr>
+				<tr>
+					<td></td>
+					<td> -	</td>
+					<td>1.9-3.4%</td>
+					<td>0.3</td>
+					<td>5%</td>
+					<td>10%</td>
+					<td>2 або 5</td>
+					<td>1.8%+3.15</td>
+					<td></td>
+					<td></td>
+					<td></td>									
+				</tr>							
+				<tr>
+					<td class="capital">ібэй-вестбд-пэйнр</td>
+					<td> <input type="text" name="лічба" onkeydown='calcFee(event)' id="inp1"> </td>
+					<td id="PP_1"></td>
+					<td id="PP_2"></td>
+					<td id="westb"></td>
+					<td id="e_bay"></td>
+					<td id="payon_1"></td>
+					<td id="payon_2"></td>
+					<td id="total_losses"></td>
+					<td id="ttl_losses_perc"></td>
+					<td id="remainder"></td>					
+				</tr>
+			</table>		<!-- канец: ібэй-вестБід-Пэянір  -->		
+			<button onclick='calcAll()' >Вылічыць паборы</button>
+
+
+		<div class="shipping">
+			<div class="box_quantity">
+				Колькасць скрыняў
+				<label for="one_box"><input type="radio" checked name="" id="one_box"/>адна</label>
+				<label for="two_boxes"><input type="radio" name="" id="two_boxes"/>дзве</label>
+				<label for="three_boxes"><input type="radio" name="" id="three_boxes"/>тры</label>
+			</div>
+		</div>
+
+		<div class="parcel_weight margtop">
+			<label for="weight-parc-one"><input type="text" name="" id="weight-parc-one"/>Вага пасылкі (кг)</label>
+			<label for="weight-parc-two"><input type="text" name="" id="weight-parc-two"/>Вага 2-й пасылкі (кг)</label>
+
+		<div class="select-country margtop">
+			Краіна	
+			<select id="">   				
+			</select>
+			</div>
+		</div>
+
+		<div class="box-value margtop">
+			Улічыць выдаткі на пакавальный матэрыялы <br>
+				<label for="one_cartoon_box"><input type="checkbox" checked name="" id="one_cartoon_box"/>адна скрыня</label>
+				<label for="two_cartoon_box"><input type="checkbox" name="" id="two_cartoon_box"/>дзве скрыні</label>
+				<label for="pack_materials"><input type="checkbox" name="" id="pack_materials"/>пакавальныя дробязі</label>	
+				<label for="add_expences"><input type="text" name="" id="add_expences"/>Дадатковыя выдаткі</label>
+		</div>
+
+		<div class="shipping_value margtop">
+			<table class="ship_val">
+				<tr>
+					<td>Наземн.</td>
+					<td>Авіа</td>
+					<td>EMS</td>
+				</tr>
+				<tr>
+					<td class="ground"></td>
+					<td class="air"></td>
+					<td class="ems"></td>
+				</tr>				
+			</table>
+
+			<div class="take_for_calc">
+				
+				<label for="post_1"><input type="radio" name="" id="post_1"/></label>
+				<label for="post_2"><input type="radio" checked name="" id="post_2"/></label>
+				<label for="post_3"><input type="radio" name="" id="post_3"/></label>
+				<br>
+				Улічваць пры канчатковых разліках 
+			</div>			
+		</div>
+
+		<button class="margtop" onclick='calcShipping()'>Вылічыць перасылку</button>
+
+		<div class="rate margtop">
+			Курс BYN па НацБанку на дадзены момант: <span>1$ = 19.775р </span>
+
+		</div>
+
+		<!--<div class="ttable">	 ібэй-Пайпал(pl)-Аліёр  -->
+	<!--		<table>
+				<tr class="capital">
+					<td></td>
+					<td>Зыходная сумма</td>
+					<td><div>ПП1</div>
+						<div class="inner"> 
+							<label for="from_us"><input type="radio"  name="edzin" id="from_us"/>1.9??</label>
+							<br/>
+							<label for="from_world"><input type="radio" checked  name="edzin" id="from_world"/>3.4??</label>
+						</div>
+					</td>				
+					<td>ПП2</td>
+					
+					<td>эБэй</td>
+					<td>Аліёр банкамат
+						<div class="inner"> 
+							<label for="withdraw"><input type="radio" checked name="tshy" id="withdraw"  />зняццё (2% ???)</label>
+							<br/>
+							<label for="shop"><input type="radio" name="tshy" id="shop"/>магаз (???)</label>
+						</div>
+					</td>								
+					<td>Агульн. страты</td>
+					<td>Аг. страты ў %</td>	
+					<td>Рэшта чыст.</td>											
+				</tr>
+				<tr>
+					<td></td>
+					<td> -	</td>
+					<td>3.4% ??</td>
+					<td>0.3 ???</td>
+					<td>10%</td>
+					<td>2% ??</td>
+
+					<td></td>
+					<td></td>
+					<td></td>									
+				</tr>							
+				<tr>
+					<td class="capital">ібэй-вестбд-пэйнр</td>
+					<td> <input type="text" name="лічба" id="inp1"> </td>
+					<td id="PP_1"></td>
+					<td id="PP_2"></td>
+					<td id="e_bay"></td>
+					<td id="alior"></td>
+					<td id="total_losses"></td>
+					<td id="ttl_losses_perc"></td>
+					<td id="remainder"></td>					
+				</tr>
+			</table>
+			<button class="calculate" onclick='calc()'>Вылічыць</button>
+				
+			
+		</div>	
+	-->
+	</div>
+
+
+	</body>
+</html>
+	

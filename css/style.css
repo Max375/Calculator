@@ -1,0 +1,103 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+HTML, BODY{
+	background-color: #356170;
+	color:#000;
+	font-style: Tahoma;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+ul{
+	list-style: none;	
+}
+
+.center{
+	width: 900px;
+	border: solid 1px black;
+	margin: auto;
+}
+
+table{
+	background-color:#aaa;
+	font:  14px Tahoma;	
+}
+
+
+table.fee{
+	margin: 100px auto 30px ;
+}
+
+table td{
+	/*min-width: 60px;*/
+	text-align:center ;
+	border: solid 1px #000;
+	height: 30px;
+}
+
+#remainder{
+	font: Bold 17px Tahoma;
+}
+
+table.fee .capital td, td.capital{
+	font-weight:bold;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+table.fee .capital td{
+	height:70px;
+}
+
+
+
+button{
+	height: 45px;
+	width: 100px;
+}
+
+input#inp1{
+	font: Bold 16px Tahoma;		
+	width: 50px;
+	text-align: center;
+}
+
+.margtop{
+	margin-top: 20px;
+}
+
+.shipping{
+	margin-top: 40px;
+}
+
+input#weight-parc-one,
+ input#weight-parc-two,
+  input#add_expences{
+	text-align:center;
+	width: 40px;
+}
+
+.select-country select{
+	width: 150px;
+}
+
+table.ship_val{
+	margin: 40px 0 8px 0;
+}
+
+.take_for_calc input{
+ 	margin: 0 25px 0 25px; 
+}
+
+.rate{
+	margin-bottom: 150px; 
+}
+
+
